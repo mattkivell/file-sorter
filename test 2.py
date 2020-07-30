@@ -11,6 +11,16 @@ def overwrite():
     file.write("{}".format(write))
     print("the file now says".format(write))
 
+def createfolder():
+    import os
+    os.chdir('G:\My Drive')
+    foldy = str(input(" folder name: "))
+    os.mkdir(foldy)
+    print("Folder created called {}".format(foldy))
+
+
+
+
 readprint()
 overwrite()
 readprint()
