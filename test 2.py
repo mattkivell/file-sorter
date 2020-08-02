@@ -4,7 +4,6 @@ def readprint():
         contents =file.read()
         print(contents)
 
-
 def overwrite():
     write = str(input("what do you want to write? "))
     file = open("file.txt","w")
