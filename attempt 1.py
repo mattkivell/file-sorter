@@ -1,4 +1,6 @@
+from tkinter import *
 import os
+master = Tk()
 
 def readprint():
     readprint = str(input("what file do you want to read 1 , 2 , 3 ? "))
@@ -23,8 +25,3 @@ def createfolder():
 def createfile():
     createfile = str(input("what do you want to name the file? "))
     file = open(createfile,"w+")
-
-readprint()
-overwrite()
-readprint()
-
