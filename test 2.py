@@ -1,13 +1,15 @@
 import os
 def readprint():
-    file = open("file.txt","r")
+    readprint = str(input("what file do you want to read 1 , 2 , 3 ? "))
+    file = open(readprint,"r")
     if file.mode == 'r' :
         contents =file.read()
         print(contents)
 
 def overwrite():
+    overwrite = str(input("what file do you want to edit 1 , 2 , 3 ? "))
     write = str(input("what do you want to write? "))
-    file = open("file.txt","w")
+    file = open(overwrite,"w")
     file.write("{}".format(write))
     print("the file now says".format(write))
 
@@ -18,10 +20,10 @@ def createfolder():
     print("Folder created called {}".format(foldy))
 
 def createfile():
-    createfile = str(input("what do you want to name the file?"))
+    createfile = str(input("what do you want to name the file? "))
     file = open(createfile,"w+")
 
 readprint()
 overwrite()
 readprint()
-createfile()
+
