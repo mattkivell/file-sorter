@@ -1,5 +1,6 @@
 import tkinter as tk
 import os
+
 class Application(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
@@ -41,5 +42,7 @@ class Application(tk.Frame):
         file = open(createfile,"w+")
 
 root = tk.Tk()
-app = Application(master=root)
-app.mainloop()
+myapp = Application(master=root)
+myapp.mainloop()
+myapp.master.title("things")
+myapp.master.maxsize(1080,1920)
