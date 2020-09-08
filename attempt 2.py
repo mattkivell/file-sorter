@@ -2,8 +2,8 @@ import tkinter as tk
 import os
 window=Tk()
 class Application(tk.Frame):
-    def __init__(, master=None):
-        tk.Frame.__init__(, master)
+    def __init__(master=None):
+        tk.Frame.__init__(master)
         .pack()
         .buttoneditfile()
         .buttonreadfile()

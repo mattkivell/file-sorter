@@ -23,5 +23,5 @@ def createfolder():
 def createfile():
     createfile = str(input("what do you want to name the file? "))
     file = open(createfile,"w+")
-
+createfile()
 
