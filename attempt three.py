@@ -33,13 +33,16 @@ def Readprint():
                 error=error+1
                 readprint=str(text1.get()+".txt")
                 print(readprint)
+    button2.place(x=90, y=150)
 
 def overwrite():
-    overwrite = str(input("what file do you want to edit 1 , 2 , 3 ? "))
-    write = str(input("what do you want to write? "))
-    file = open(overwrite,"w")
-    file.write("{}".format(write))
-    print("the file now says" " {}".format(write))
+    global text2
+    text2.destroy()
+    file = open(readprint,"w")
+    file.write(text1.get())
+    file = open(readprint,"r")
+    text2=Label(window, text=file.read())
+    text2.place(x=100, y=220)
 
 def createfolder():
     os.chdir('G:\My Drive')
@@ -53,13 +56,14 @@ def createfile():
 
 
 #tkinter features
-label1=Label(window, text='What text file do you want to read')
+label1=Label(window, text='File Exploring ')
 text2=Label(window, text=contents)
 text1=Entry(bd=2)
 button1 = Button(window, text='Search',command=Readprint)
+button2 = Button(window, text='Edit file',command=overwrite)
 button1.place(x=140, y=150)
 text1.place(x=100, y=100)
-label1.place(x=80, y=50)
+label1.place(x=120, y=50)
 text2.place(x=100, y=220)
 
 #tkinter setup
