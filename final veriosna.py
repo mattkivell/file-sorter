@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import  *
 import os
 window=Tk()
 contents=""
@@ -33,7 +33,7 @@ def Readprint():
                 error=error+1
                 readprint=str(text1.get()+".txt")
                 print(readprint)
-    button2.place(x=90, y=150)
+        button2.place(x=89, y=150)
 
 def overwrite():
     global text2
@@ -44,31 +44,31 @@ def overwrite():
     text2=Label(window, text=file.read())
     text2.place(x=100, y=220)
 
-def createfolder():
-    os.chdir('G:\My Drive')
-    foldy = str(input(" folder name: "))
-    os.mkdir(foldy)
-    print("Folder created called {}".format(foldy))
-
 def createfile():
-    createfile = str(input("what do you want to name the file? "))
+    global text1
+
+    createfile =str(text1.get()+".txt")
     file = open(createfile,"w+")
 
 
 #tkinter features
-label1=Label(window, text='File Exploring ')
+label1=Label(window, text='File Exploring')
 text2=Label(window, text=contents)
 text1=Entry(bd=2)
 button1 = Button(window, text='Search',command=Readprint)
 button2 = Button(window, text='Edit file',command=overwrite)
+button3 = Button(window, text='Create File',command=createfile)
 button1.place(x=140, y=150)
 text1.place(x=100, y=100)
 label1.place(x=120, y=50)
 text2.place(x=100, y=220)
+button3.place(x=186, y=150)
 
 #tkinter setup
-window.title('file editor')
+window.title('File Exploring (not explorer)')
 window.geometry("300x300+10+10")
+canvas = Canvas(window, width=300, height=300)
+img = PhotoImage(file="cock boy.gif")
+canvas.create_image(0,0,image=img)
+window.resizable(False, False)
 window.mainloop()
-
-
